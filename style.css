@@ -306,6 +306,59 @@ nav.scrolled {
     .logo-img { height: 50px; } /* Logo un po' più piccolo su mobile per non coprire tutto */
     nav { padding: 0.5rem 5%; height: 80px; }
 }
+/* --- RESPONSIVE HERO SECTION (Mobile Fix) --- */
+@media (max-width: 768px) {
+    
+    .hero-section {
+        padding: 0 20px; 
+        height: auto;    
+        min-height: 100vh;
+        padding-top: 100px; /* Spazio per la navbar fissa */
+        padding-bottom: 50px;
+    }
+
+    /* 2. Titolo Piccolo sopra (Migliora il tuo trading...) */
+    .hero-sup-title {
+        font-size: 0.75rem; /* Molto più piccolo */
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+
+    /* 3. TITOLO GIGANTE (FORMAZIONE E ASSISTENZA) */
+    .hero-main-title {
+        font-size: 2.3rem; /* Ridotto drasticamente (era troppo grande) */
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        word-wrap: break-word; /* Evita che parole lunghe rompano il layout */
+    }
+
+    /* 4. Sottotitolo (Consulenza personalizzata...) */
+    .hero-sub-title {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+        padding: 0 10px; /* Margine interno per non toccare i bordi */
+    }
+
+    /* 5. Bottone Verde */
+    .btn-neon-hero {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%; /* Bottone a tutta larghezza su mobile è più bello */
+        justify-content: center; /* Testo centrato */
+    }
+    
+    /* 6. Aggiustamento Navbar Mobile */
+    nav {
+        padding: 0.5rem 5%;
+        height: 70px; /* Navbar più compatta */
+    }
+    
+    .logo-img {
+        height: 45px; /* Logo proporzionato */
+    }
+}
 /* --- SEZIONE CHI SONO (About) --- */
 .about-section {
     padding: 8rem 5%;
