@@ -115,4 +115,35 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // --- 5. SIDE NAVIGATION SCROLL SPY ---
+    // Seleziona tutti i link del menu laterale
+    const sideLinks = document.querySelectorAll('.side-link');
+    const sections = document.querySelectorAll('section');
+
+    function changeLinkState() {
+        let index = sections.length;
+
+        // Cerca quale sezione è visibile
+        while(--index && window.scrollY + 300 < sections[index].offsetTop) {}
+        
+        // Rimuovi 'active' da tutti
+        sideLinks.forEach((link) => link.classList.remove('active'));
+        
+        // Aggiungi 'active' a quello corrente (se esiste corrispondenza)
+        // L'indice 0 potrebbe essere problematico se l'header non è una section, 
+        // ma nel nostro caso la hero è la prima section.
+        if(index >= 0) {
+            // Verifica che l'id della sezione corrisponda all'href del link
+            const currentId = sections[index].id;
+            const activeLink = document.querySelector(`.side-link[href="#${currentId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+    }
+
+    // Attiva la funzione allo scroll
+    window.addEventListener('scroll', changeLinkState);
+    // Attiva anche al caricamento
+    changeLinkState();
 });

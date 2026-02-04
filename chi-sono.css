@@ -1,0 +1,395 @@
+/* --- 1. VARIABILI & RESET --- */
+:root {
+    --neon-green: #00f260; 
+    --bg-dark: #080c14;          
+    --bg-glass: rgba(8, 12, 20, 0.8); 
+    --text-white: #ffffff;
+    --text-dim: #b3b9c5;          
+    --transition-smooth: all 0.4s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* UTILITIES */
+.text-neon { color: var(--neon-green); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.ml-2 { margin-left: 0.5rem; }
+
+
+/* --- 3. SEZIONE CHI SONO (SOLO TESTO) --- */
+.about-section {
+    padding: 140px 0 80px; 
+    position: relative;
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    min-height: 100vh;
+}
+
+.about-grid {
+    display: flex;             
+    flex-direction: column;    
+    align-items: center;       
+    justify-content: center;
+    width: 100%;
+}
+
+/* RIQUADRO TESTO (Centrale e Largo) */
+.glass-box {
+    width: 100%;               
+    max-width: 1000px; /* Larghezza massima per non allargare troppo le righe su monitor grandi */
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 4rem 3rem; /* Padding aumentato per dare respiro */
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    border-top: 3px solid var(--neon-green); /* Bordo decorativo sopra */
+    text-align: left;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+    text-align: center; /* Titolo centrato */
+}
+
+.about-text p {
+    font-size: 1.1rem; /* Testo leggermente più grande */
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify; 
+}
+
+.about-text strong {
+    color: var(--text-white);
+    font-weight: 700;
+}
+
+/* BOTTONE TELEGRAM */
+.btn-neon-outline {
+    display: table; /* Trucco per centrarlo con margin auto */
+    margin: 2rem auto 0 auto; /* Centrato */
+    padding: 0.9rem 2.5rem; 
+    border: 2px solid var(--neon-green); color: var(--neon-green);
+    font-weight: 700; text-transform: uppercase; border-radius: 50px;
+    transition: var(--transition-smooth);
+    text-align: center;
+}
+.btn-neon-outline:hover {
+    background: var(--neon-green); color: #000; box-shadow: 0 0 20px rgba(0, 242, 96, 0.4);
+}
+
+
+/* --- 4. SEZIONE LIBRO (Book Section) --- */
+.book-section {
+    padding: 8rem 0;
+    position: relative;
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at 100% 50%, rgba(5, 117, 230, 0.08) 0%, transparent 50%);
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr; 
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Riquadro testo del libro (specifico) */
+.book-glass-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border-left: 3px solid var(--neon-green);
+}
+
+.book-action-area {
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-amazon {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 1rem 2rem; background: #FF9900; color: #000;
+    font-weight: 700; border-radius: 8px; transition: var(--transition-smooth);
+    box-shadow: 0 5px 15px rgba(255, 153, 0, 0.3);
+}
+.btn-amazon:hover {
+    background: #ffad33; transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.5);
+}
+
+.book-visual {
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+    perspective: 1000px;
+}
+
+.book-cover-img {
+    width: 100%; max-width: 350px; height: auto;
+    border-radius: 5px;
+    box-shadow: -10px 10px 30px rgba(0,0,0,0.5), -2px 2px 0px rgba(255,255,255,0.1);
+    transform: rotateY(-15deg);
+    transition: transform 0.5s ease; z-index: 2;
+}
+.book-visual:hover .book-cover-img { transform: rotateY(0deg) scale(1.05); }
+
+.book-glow {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 80%; height: 80%; background: var(--neon-green);
+    filter: blur(80px); opacity: 0.15; z-index: 1;
+}
+
+.badge-book { 
+    position: absolute; bottom: -20px; right: 20px; 
+    background: rgba(8, 12, 20, 0.9); backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 242, 96, 0.3); padding: 0.7rem 1.4rem;
+    border-radius: 12px; display: flex; align-items: center; gap: 10px;
+    font-weight: 600; font-size: 0.9rem; color: #fff;
+    animation: float 5s ease-in-out infinite; z-index: 3;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+
+/* --- 5. FOOTER STYLE --- */
+.site-footer {
+    background-color: #050505;
+    padding: 6rem 0 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    margin-top: auto;
+}
+
+.site-footer::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, #00f260, transparent);
+    opacity: 0.5; box-shadow: 0 0 15px #00f260;
+}
+
+.footer-grid {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem;
+    margin-bottom: 4rem;
+}
+
+.footer-heading {
+    font-size: 1.8rem; font-weight: 800; color: #fff;
+    margin-bottom: 1.5rem; line-height: 1.2;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.7); line-height: 1.7;
+    margin-bottom: 1.5rem; font-size: 0.95rem;
+}
+.footer-text strong { color: #fff; }
+
+.footer-social-block {
+    display: inline-flex; align-items: center; gap: 2rem; margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.03); padding: 1rem 1.5rem;
+    border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.social-label { font-weight: 700; font-size: 0.9rem; color: #fff; display: flex; align-items: center; }
+.footer-social-icons { display: flex; gap: 1rem; }
+
+.social-link {
+    width: 35px; height: 35px; background: rgba(255,255,255,0.1);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: #fff; transition: all 0.3s ease; font-size: 1rem;
+}
+.social-link:hover {
+    background: #00f260; color: #05080f; box-shadow: 0 0 10px #00f260; transform: translateY(-3px);
+}
+
+.footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;
+}
+.copyright { font-size: 0.85rem; color: #666; }
+
+
+/* --- 6. RESPONSIVE --- */
+@media (max-width: 900px) {
+    .nav-menu {
+        position: fixed; top: 0; right: -100%; height: 100vh; width: 100%;
+        background: rgba(8, 12, 20, 0.98); flex-direction: column;
+        justify-content: center; transition: 0.4s ease;
+    }
+    .nav-menu.active { right: 0; }
+    .hamburger-menu { display: block; z-index: 1001; }
+    
+    /* Chi Sono */
+    .glass-box { padding: 2rem 1.5rem; width: 100%; }
+    
+    /* Libro */
+    .book-grid { grid-template-columns: 1fr; text-align: center; }
+    .book-visual { order: -1; margin-bottom: 2rem; }
+    
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .footer-social-block { flex-direction: column; width: 100%; text-align: center; }
+}
+/* =========================================
+   7. SEZIONE CTA STORIA & PARTNERS
+   ========================================= */
+
+.story-cta-section {
+    padding: 6rem 0 8rem;
+    position: relative;
+    background-color: var(--bg-dark);
+    overflow: hidden;
+}
+
+/* Luce di sfondo */
+.cta-bg-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; height: 80%;
+    background: radial-gradient(circle, rgba(0, 242, 96, 0.05) 0%, transparent 60%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* --- 1. CARD CENTRALE (CTA) --- */
+.story-glass-card {
+    background: rgba(8, 12, 20, 0.6); /* Sfondo scuro semi-trasparente */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--neon-green); /* Linea verde sopra */
+    border-bottom: 1px solid var(--neon-green); /* Linea verde sotto */
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto 5rem auto; /* Margine sotto per staccare dai loghi */
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.story-text {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    margin-top: 1.5rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Stile speciale per il bottone in questa sezione */
+.btn-neon-hero {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background-color: var(--neon-green);
+    color: #05080f;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 0 20px rgba(0, 242, 96, 0.3);
+    margin-top: 2rem;
+}
+
+.btn-neon-hero:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 40px rgba(0, 242, 96, 0.6);
+    color: #000;
+}
+
+/* --- 2. LOGHI PARTNER (Tech Style) --- */
+.partners-row-tech {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-logo-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    width: 200px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    /* Opzionale: sfondo bianco leggero per loghi scuri, se necessario */
+    /* background: rgba(255, 255, 255, 0.1); */ 
+}
+
+.tech-logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.7); /* Loghi spenti di default */
+    transition: all 0.4s ease;
+}
+
+/* Hover Effect: Si accende e diventa colorato */
+.tech-logo-box:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--neon-green);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 242, 96, 0.15);
+}
+
+.tech-logo-box:hover img {
+    filter: grayscale(0%) opacity(1); /* Colori originali */
+    transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .story-glass-card {
+        padding: 2.5rem 1.5rem;
+    }
+    .section-title {
+        font-size: 1.8rem !important; /* Forza riduzione titolo */
+    }
+    
+    .partners-row-tech {
+        gap: 1rem;
+    }
+    
+    .tech-logo-box {
+        width: 140px; /* Loghi più piccoli su mobile */
+        height: 90px;
+        padding: 1rem;
+    }
+}

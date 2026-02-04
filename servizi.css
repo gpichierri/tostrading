@@ -1,0 +1,699 @@
+/* --- SEZIONE HERO SERVIZI (Intro Software) --- */
+.services-hero-section {
+    /* RIDOTTO: Da 4rem a 2rem per avvicinare le sezioni */
+    padding: 2rem 5%; 
+    background-color: var(--bg-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.services-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; 
+    gap: 3rem; /* Ridotto leggermente il gap interno */
+    align-items: center;
+    margin-top: 2rem; /* Ridotto margine top */
+}
+
+/* --- STILE IMMAGINE SOFTWARE (Left) --- */
+.hero-visual {
+    position: relative;
+    padding: 20px; 
+}
+
+.software-glass-frame {
+    position: relative;
+    border-radius: 16px;
+    padding: 8px; 
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transition: transform 0.5s ease;
+}
+
+.software-glass-frame:hover {
+    transform: perspective(1000px) rotateY(2deg) scale(1.02);
+    border-color: rgba(0, 242, 96, 0.3);
+}
+
+.software-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    filter: contrast(1.1) brightness(0.9); 
+}
+
+/* Etichetta tecnologica */
+.tech-badge {
+    position: absolute;
+    top: -15px;
+    right: 30px;
+    background: var(--bg-dark);
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(0, 242, 96, 0.2);
+    z-index: 2;
+}
+
+/* Luce soffusa */
+.software-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; height: 90%;
+    background: var(--neon-green);
+    filter: blur(80px);
+    opacity: 0.15;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+/* --- STILE TESTO (Right) --- */
+.service-highlight-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-white);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.service-text-block p {
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-text-block strong {
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+.action-wrapper {
+    margin-top: 2rem; /* Ridotto leggermente */
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .services-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem; /* Ridotto gap mobile */
+        text-align: center;
+    }
+
+    .hero-visual {
+        order: 1; 
+        margin-bottom: 1.5rem; /* Ridotto margine */
+    }
+    
+    .hero-content {
+        order: 2;
+    }
+
+    .service-highlight-title {
+        font-size: 1.8rem;
+    }
+    
+    .tech-badge {
+        right: 50%;
+        transform: translateX(50%); 
+    }
+    
+    .btn-neon-hero {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Padding extra per le pagine interne */
+.page-header-padding {
+    padding-top: 130px; /* Spazio navbar */
+    padding-bottom: 1rem; /* RIDOTTO: Pochissimo spazio sotto l'header */
+}
+
+/* Fix per Mobile */
+@media (max-width: 768px) {
+    .page-header-padding {
+        padding-top: 100px;
+    }
+}
+
+/* --- FOOTER STYLING --- */
+.site-footer {
+    background-color: #050505; 
+    /* RIDOTTO: Da 6rem a 3rem sopra */
+    padding: 3rem 5% 2rem; 
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    margin-top: auto; 
+}
+
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, #00f260, transparent);
+    opacity: 0.5;
+    box-shadow: 0 0 15px #00f260;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem; /* Ridotto */
+    margin-bottom: 3rem; /* Ridotto */
+}
+
+.footer-heading {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.footer-desc, .footer-text {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.footer-text strong { color: #fff; }
+
+.footer-social-block {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: inline-flex;
+}
+
+.social-label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.footer-social-icons { display: flex; gap: 1rem; }
+
+.social-link {
+    width: 35px; height: 35px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-decoration: none; 
+}
+
+.social-link:hover {
+    background: #00f260;
+    color: #05080f;
+    box-shadow: 0 0 10px #00f260;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .footer-social-block {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        border-radius: 20px;
+        text-align: center;
+    }
+    .footer-heading { font-size: 1.5rem; }
+}
+
+/* --- SEZIONE 2: SERVIZI FEATURE (Layout Alternato) --- */
+.services-feature-section {
+    /* RIDOTTO: Da 8rem a 2rem per avvicinare le sezioni */
+    padding: 2rem 5%; 
+    position: relative;
+    background-color: #080c14; 
+    overflow: hidden;
+}
+
+.side-glow-right {
+    position: absolute;
+    top: 50%; right: -100px;
+    transform: translateY(-50%);
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0, 242, 96, 0.1) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.section-subtitle-small {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    margin-top: -10px;
+    display: block;
+}
+
+.text-3xl { font-size: 2.5rem; margin-bottom: 1rem; display: inline-block;}
+
+.tech-badge.badge-left {
+    right: auto; 
+    left: 30px;  
+}
+
+@media (max-width: 900px) {
+    .reverse-layout-mobile .hero-content { order: 2; }
+    .reverse-layout-mobile .hero-visual { order: 1; }
+    
+    .tech-badge.badge-left {
+        left: 50%;
+        transform: translateX(-50%); 
+    }
+}
+
+/* --- SEZIONE 3: COACHING AVANZATO (Dettagli) --- */
+.side-glow-left {
+    position: absolute;
+    top: 50%; left: -100px;
+    transform: translateY(-50%);
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0, 242, 96, 0.08) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* --- SEZIONE 4: TRADE ON SPORTS (Specifiche) --- */
+.tos-promo-section {
+    position: relative; 
+}
+
+/* LINEA VERDE "LASER" */
+.tos-promo-section::before {
+    content: '';
+    position: absolute;
+    top: 0;          
+    left: 10%;       
+    width: 80%;      
+    height: 1px;     
+    background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
+    opacity: 0.8;
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+.btn-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.logo-frame-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; 
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%);
+}
+
+.tos-logo-img {
+    width: 80%;       
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%; 
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+    transition: transform 0.5s ease;
+}
+
+.software-glass-frame:hover .tos-logo-img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.tos-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%; height: 70%;
+    background: linear-gradient(45deg, #ff8c00, var(--neon-green)); 
+    filter: blur(90px);
+    opacity: 0.2;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+@media (max-width: 900px) {
+    .btn-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .tos-logo-img {
+        width: 60%;
+    }
+}
+/* --- SEZIONE 5: PARTNERS & TOOLS GRID --- */
+
+/* Riutilizziamo la classe base services-hero-section per il padding (2rem) */
+.partners-section {
+    /* Eventuale sfondo leggermente diverso se vuoi alternare */
+    /* background-color: #080c14; */
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Colonne uguali */
+    gap: 2rem;
+    align-items: start; /* Allinea le card in alto */
+    margin-top: 2rem;
+}
+
+/* Stile della singola Card (Glass Effect) */
+.partner-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Per rendere le card della stessa altezza visiva */
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-green);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Box Logo (Sfondo bianco per far risaltare loghi scuri) */
+/* Box Logo (Aggiornato: Più grande) */
+.partner-logo-box {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* MODIFICA QUI: Aumentiamo l'altezza da 100px a 160px */
+    height: 160px; 
+}
+
+.partner-logo-box img {
+    /* L'immagine si adatterà automaticamente al nuovo spazio più grande */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Mantiene le proporzioni senza tagliare */
+}
+
+/* Titolo Card */
+.partner-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+    border-bottom: 2px solid var(--neon-green);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* Testo Corpo */
+.partner-body p {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-align: left; /* Migliore leggibilità per testi lunghi */
+}
+
+/* Links & Footer Card */
+.partner-links {
+    margin-top: auto; /* Spinge i link in fondo alla card */
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.partner-links p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.link-neon {
+    color: var(--neon-green);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.link-neon:hover {
+    color: #fff;
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+/* Box Prezzi/Offerte */
+.price-highlight-box {
+    background: rgba(0, 242, 96, 0.1); /* Sfondo verde molto trasparente */
+    border: 1px solid rgba(0, 242, 96, 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.text-strike {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 0.9em;
+}
+
+.separator-line {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 10px 0;
+}
+
+.mt-3 { margin-top: 1.5rem; }
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonne su tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .partners-grid {
+        grid-template-columns: 1fr; /* 1 colonna su mobile */
+        gap: 3rem;
+    }
+}
+/* --- STILI PULSANTI PARTNER CARD --- */
+
+.partner-btn-wrapper {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spazio tra i pulsanti */
+}
+
+/* 1. Pulsante Outline (Bordo) - Per Sito e YouTube */
+.btn-card-outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    border-radius: 8px; /* Leggermente arrotondato */
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.btn-card-outline:hover {
+    background: var(--neon-green);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 242, 96, 0.4);
+    transform: translateY(-2px);
+}
+
+/* 2. Box Offerta */
+.offer-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0, 242, 96, 0.05); /* Verde chiarissimo sfondo */
+    border: 1px dashed rgba(0, 242, 96, 0.3);
+    border-radius: 10px;
+}
+
+.offer-label {
+    font-size: 0.85rem;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* 3. Pulsante Solid (Pieno) - Per le Offerte */
+.btn-card-solid {
+    display: block; /* Occupa tutta la larghezza */
+    text-align: center;
+    padding: 0.8rem 1rem;
+    background: var(--neon-green); /* Sfondo Verde */
+    color: #05080f; /* Testo Scuro */
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-card-solid:hover {
+    background: #fff; /* Diventa bianco al passaggio */
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.02);
+}
+
+/* Prezzo Barrato (Vecchio prezzo) */
+.old-price {
+    text-decoration: line-through;
+    opacity: 0.6;
+    font-size: 0.85em;
+    margin-left: 5px;
+}
+
+/* Utilità Margine */
+.mb-2 { margin-bottom: 0.5rem; }
+
+/* Adattamento icone nei pulsanti */
+.btn-card-outline i {
+    font-size: 1.1rem;
+}
+/* --- STILI PULSANTI PARTNER CARD (Senza Sottolineature) --- */
+
+.partner-btn-wrapper {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 1. Pulsante Outline (Bordo) */
+.btn-card-outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    background: transparent;
+    
+    /* RIMUOVE LA SOTTOLINEATURA */
+    text-decoration: none !important; 
+}
+
+.btn-card-outline:hover {
+    background: var(--neon-green);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 242, 96, 0.4);
+    transform: translateY(-2px);
+    text-decoration: none; /* Assicura che non appaia al passaggio del mouse */
+}
+
+/* 2. Box Offerta */
+.offer-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0, 242, 96, 0.05);
+    border: 1px dashed rgba(0, 242, 96, 0.3);
+    border-radius: 10px;
+}
+
+.offer-label {
+    font-size: 0.85rem;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* 3. Pulsante Solid (Pieno) */
+.btn-card-solid {
+    display: block;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    background: var(--neon-green);
+    color: #05080f;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: none;
+    
+    /* RIMUOVE LA SOTTOLINEATURA */
+    text-decoration: none !important;
+}
+
+.btn-card-solid:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.02);
+    text-decoration: none;
+}
+
+/* Prezzo Barrato */
+.old-price {
+    text-decoration: line-through; /* Questo deve rimanere barrato */
+    opacity: 0.6;
+    font-size: 0.85em;
+    margin-left: 5px;
+}
+
+.mb-2 { margin-bottom: 0.5rem; }
+
+.btn-card-outline i { font-size: 1.1rem; }

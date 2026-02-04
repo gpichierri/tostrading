@@ -1071,3 +1071,735 @@ nav.scrolled {
     .benefits-grid { grid-template-columns: 1fr; }
     .benefit-card { padding: 2rem; }
 }
+/* --- SEZIONE SERVIZI DETTAGLIATI --- */
+.services-detail-section {
+    padding: 8rem 5%;
+    background-color: var(--bg-dark);
+    position: relative;
+    /* Background diverso per staccare */
+    background-image: linear-gradient(to bottom, rgba(8,12,20,1), rgba(5, 117, 230, 0.05), rgba(8,12,20,1));
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Colonne su Desktop */
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card Container */
+.service-card {
+    position: relative;
+    border-radius: 20px;
+    padding: 1px; /* Per il bordo sfumato se necessario, qui usiamo glass */
+    transition: var(--transition-smooth);
+    display: flex; /* Per far allungare il contenuto */
+}
+
+/* Contenuto Glass */
+.card-glass-content {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 19px;
+    padding: 2.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+}
+
+/* Hover Effect */
+.service-card:hover .card-glass-content {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--neon-green);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Highlight Card (La terza, quella del coaching) */
+.highlight-card .card-glass-content {
+    border-color: rgba(0, 242, 96, 0.3);
+    background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(0,242,96,0.02) 100%);
+}
+
+/* Icona sopra il titolo */
+.icon-header {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--neon-green);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.text-dim-small {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    font-weight: 400;
+    display: block;
+    margin-top: 5px;
+}
+
+.service-card p {
+    color: var(--text-dim);
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Spinge il bottone in basso */
+}
+
+/* Contenitore Bottone in basso */
+.card-action-bottom {
+    margin-top: auto;
+}
+
+/* Bottone Piccolo Outline (Per Box 1 e 4) */
+.btn-neon-outline-sm {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-white);
+    text-transform: uppercase;
+    transition: var(--transition-smooth);
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--neon-green);
+}
+
+.btn-neon-outline-sm:hover {
+    color: var(--neon-green);
+    gap: 15px; /* Freccia si muove */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 Colonna su Tablet/Mobile */
+        gap: 1.5rem;
+    }
+    
+    .card-glass-content {
+        padding: 1.5rem;
+    }
+}
+/* --- SEZIONE CORSO PSICOLOGIA (Coming Soon) --- */
+.course-section {
+    padding: 8rem 5%;
+    position: relative;
+    background-color: var(--bg-dark);
+    /* Sfumatura leggera Viola/Blu scuro per dare profondità */
+    background-image: radial-gradient(circle at 80% 50%, rgba(76, 29, 149, 0.15) 0%, rgba(8, 12, 20, 1) 60%);
+    overflow: hidden;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Badge Prossimamente --- */
+.badge-wrapper { margin-bottom: 1.5rem; }
+
+.badge-coming-soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 193, 7, 0.1); /* Sfondo Oro leggero */
+    border: 1px solid #ffc107;          /* Bordo Oro */
+    color: #ffc107;                     /* Testo Oro */
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.2);
+    animation: pulseBadge 2s infinite;
+}
+
+@keyframes pulseBadge {
+    0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+/* Tipografia */
+.course-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 900;
+    color: var(--text-white);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.course-desc {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+/* --- Visual Image (Destra) --- */
+.course-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.visual-glass-card {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    border-radius: 24px;
+    padding: 10px;
+    /* Bordo Vetro */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transform: perspective(1000px) rotateY(-5deg); /* Leggera rotazione 3D */
+    transition: transform 0.5s ease;
+}
+
+.visual-glass-card:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.02);
+}
+
+.course-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    filter: brightness(0.8) contrast(1.2);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* Bagliore dietro l'immagine */
+.glow-backdrop {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; height: 80%;
+    background: var(--neon-green);
+    filter: blur(80px);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    
+    .visual-glass-card {
+        transform: none; /* Rimuovi 3D su mobile */
+        height: 300px;
+        margin: 0 auto;
+    }
+    
+    .course-title { font-size: 2.5rem; }
+}
+/* --- SEZIONE TESTIMONIALS --- */
+.testimonials-section {
+    padding: 8rem 5%;
+    background-color: var(--bg-dark);
+    /* Pattern a punti sottili per richiamare l'originale ma in stile dark */
+    background-image: radial-gradient(#ffffff 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-color: #05080f; /* Fondo leggermente più scuro per contrasto punti */
+    /* Rendo i punti molto tenui (quasi invisibili) */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.testimonials-grid {
+    display: grid;
+    /* 3 Colonne automatiche */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Card Stile Vetro */
+.testimonial-card {
+    background: rgba(18, 22, 30, 0.7); /* Scuro semi-trasparente */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover: Luce verde */
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 242, 96, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Icona Virgolette */
+.quote-icon {
+    font-size: 2rem;
+    color: var(--neon-green);
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+/* Testo Recensione */
+.testimonial-text {
+    font-size: 0.95rem;
+    color: #cfcfcf;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-style: italic;
+    flex-grow: 1; /* Spinge il nome in basso */
+}
+
+/* Autore (Nome) */
+.testimonial-author {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--neon-green); /* Verde Neon al posto del giallo */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: auto; /* Si ancora in basso */
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* 1 Colonna su mobile */
+    }
+    
+    .testimonial-card {
+        padding: 2rem;
+    }
+}
+/* --- SEZIONE YOUTUBE --- */
+.youtube-section {
+    padding: 8rem 5%;
+    position: relative;
+    background-color: var(--bg-dark);
+    overflow: hidden;
+}
+
+/* Gestione Sfondo */
+.youtube-bg-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+}
+
+.youtube-bg-container .bg-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.3; /* Immagine molto scura */
+    filter: grayscale(100%) contrast(1.2); /* Bianco e nero per non disturbare il neon */
+}
+
+/* Overlay Gradiente */
+.youtube-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(8, 12, 20, 0.95) 20%, rgba(8, 12, 20, 0.8) 100%);
+    z-index: 1;
+}
+
+/* Utilità Z-Index */
+.relative { position: relative; }
+.z-10 { z-index: 10; }
+
+/* Grid Layout */
+.youtube-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; /* Video un po' più grande del testo */
+    gap: 4rem;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* --- VIDEO STYLING --- */
+.video-wrapper-neon {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+    height: 0;
+    border-radius: 20px;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.video-wrapper-neon iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 20px;
+    z-index: 3;
+}
+
+/* Effetto Glow dietro il video */
+.neon-backdrop {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 105%; height: 105%;
+    background: var(--neon-green);
+    filter: blur(60px);
+    opacity: 0.25; /* Intensità del bagliore */
+    z-index: 1;
+    border-radius: 30px;
+    animation: pulseVideo 4s infinite alternate;
+}
+
+@keyframes pulseVideo {
+    0% { opacity: 0.2; transform: translate(-50%, -50%) scale(0.95); }
+    100% { opacity: 0.35; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+/* --- TESTO STYLING --- */
+.section-subtitle-large {
+    font-size: 1.8rem;
+    color: var(--text-white);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.youtube-text {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.youtube-cta {
+    margin-top: 2.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .youtube-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .video-column {
+        order: 1; /* Video sopra */
+    }
+    
+    .content-column {
+        order: 2; /* Testo sotto */
+    }
+
+    .section-subtitle-large { font-size: 1.5rem; }
+    
+    /* Ridurre bagliore su mobile per performance */
+    .neon-backdrop { width: 90%; height: 90%; opacity: 0.15; filter: blur(40px); }
+}
+/* --- SEZIONE FINALE CTA & PARTNERS --- */
+.final-cta-section {
+    padding: 8rem 5% 4rem; /* Padding bottom ridotto per i loghi */
+    position: relative;
+    background-color: var(--bg-dark);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Decorazioni Angolari (Luci Neon soffuse) */
+.corner-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--neon-green);
+    filter: blur(120px);
+    opacity: 0.15;
+    z-index: 0;
+    border-radius: 50%;
+}
+.top-left { top: -100px; left: -100px; }
+.top-right { top: -100px; right: -100px; }
+
+/* 1. GLASS CARD CENTRALE */
+.final-cta-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto 5rem auto; /* Margine sotto per staccare dai social */
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.cta-title-large {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--text-white);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.cta-desc {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Bottone Outline Grande */
+.btn-neon-outline-large {
+    padding: 1.1rem 2.5rem;
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-neon-outline-large:hover {
+    background: var(--neon-green);
+    color: var(--bg-dark);
+    box-shadow: 0 0 30px rgba(0, 242, 96, 0.4);
+}
+
+/* 2. SOCIAL SECTION */
+.social-follow-section {
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.social-title {
+    font-size: 1.2rem;
+    color: var(--text-white);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.social-icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icon-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--text-dim);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: var(--transition-smooth);
+}
+
+.social-icon-btn:hover {
+    color: var(--bg-dark);
+    transform: translateY(-5px);
+}
+
+/* Colori Social Hover */
+.social-icon-btn.facebook:hover { background: #1877F2; border-color: #1877F2; box-shadow: 0 0 20px rgba(24, 119, 242, 0.4); }
+.social-icon-btn.telegram:hover { background: #0088cc; border-color: #0088cc; box-shadow: 0 0 20px rgba(0, 136, 204, 0.4); }
+.social-icon-btn.youtube:hover { background: #FF0000; border-color: #FF0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); }
+.social-icon-btn.instagram:hover { background: #E1306C; border-color: #E1306C; box-shadow: 0 0 20px rgba(225, 48, 108, 0.4); }
+
+/* --- 3. PARTNERS LOGOS (Aggiornato: Arrotondati e Verdi) --- */
+.partners-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.partner-logo img {
+    height: 90px; /* Grandezza logo */
+    width: auto;
+    object-fit: contain;
+    
+    /* STILE BORDO VERDE E ARROTONDATO */
+    border: 2px solid var(--neon-green); /* Bordo Verde Neon */
+    border-radius: 20px;                 /* Bordi Arrotondati */
+    padding: 15px;                       /* Spazio tra logo e bordo */
+    background: rgba(0, 242, 96, 0.05);  /* Sfondo verde chiarissimo dentro il bordo */
+    
+    /* Visibilità */
+    filter: none; 
+    opacity: 1; 
+    cursor: default; /* Non cliccabile */
+    
+    /* Ombra/Glow Verde */
+    box-shadow: 0 0 15px rgba(0, 242, 96, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover: Leggero effetto "Acceso" */
+.partner-logo img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 242, 96, 0.4);
+    background: rgba(0, 242, 96, 0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .partners-row { gap: 1.5rem; }
+    .partner-logo img { 
+        height: 70px; /* Un po' più piccoli su mobile */
+        padding: 10px;
+        border-radius: 15px;
+    }
+}
+/* --- SIDE NAVIGATION (Menu Laterale Destro) --- */
+.side-navigation {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1001; /* Sopra a tutto */
+    padding: 10px;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+}
+
+/* Effetto Hover sul contenitore: Si crea lo sfondo vetro */
+.side-navigation:hover {
+    background: rgba(8, 12, 20, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    padding: 20px 15px; /* Si allarga leggermente */
+}
+
+.side-navigation ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end; /* Allinea tutto a destra */
+}
+
+.side-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+/* Il Pallino (Dot) */
+.side-dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* Il Testo (Etichetta) */
+.side-label {
+    color: var(--text-white);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* Nascosto di default */
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+    pointer-events: none; /* Non cliccabile finché non appare */
+}
+
+/* --- INTERAZIONI --- */
+
+/* 1. Quando passi il mouse sopra il menu, mostra i testi */
+.side-navigation:hover .side-label {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* 2. Hover sul singolo link */
+.side-link:hover .side-dot {
+    background-color: var(--neon-green);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.side-link:hover .side-label {
+    color: var(--neon-green);
+}
+
+/* 3. Stato ATTIVO (Sezione corrente) */
+.side-link.active .side-dot {
+    background-color: var(--neon-green);
+    transform: scale(1.3);
+    box-shadow: 0 0 15px var(--neon-green);
+    border: 1px solid #fff; /* Doppio cerchio per risaltare */
+}
+
+.side-link.active .side-label {
+    /* Opzionale: se vuoi che l'etichetta attiva si veda sempre anche senza hover, togli il commento sotto */
+    /* opacity: 1; transform: translateX(0); */
+    color: var(--neon-green);
+}
+
+/* RESPONSIVE: Nascondi su mobile (troppo poco spazio) */
+@media (max-width: 900px) {
+    .side-navigation { display: none; }
+}
