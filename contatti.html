@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti | Gianmatteo Pichierri</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contatti.css">
+    <link rel="stylesheet" href="css/servizi.css">
+    <link rel="stylesheet" href="css/chi-sono.css">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo-container">
+            <a href="#home">
+                <img src="loghi/logo.jpg" alt="TOS Trading Logo" class="logo-img">
+            </a>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="servizi.html" class="nav-link">Servizi</a></li>
+            <li><a href="chi-sono.html" class="nav-link">Chi Sono</a></li>
+            <li><a href="contatti.html" class="nav-link active">Contatti</a></li>
+            
+            <li class="mobile-only">
+                <a href="https://t.me/GianmatteoP" class="btn-nav-neon mobile">Telegram</a>
+            </li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="https://t.me/GianmatteoP" target="_blank" class="btn-nav-neon desktop-only">
+                Telegram <i class="fab fa-telegram-plane"></i>
+            </a>
+            
+            <div class="hamburger-menu" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header class="contact-hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content-center">
+            <h1 class="hero-title">Parliamo del Tuo Percorso nel <br><span class="text-neon">Trading Sportivo</span></h1>
+            
+            <div class="hero-box-small">
+                <h3 class="hero-subtitle">INVESTI NEL TUO FUTURO</h3>
+                <p class="hero-desc">
+                    Compila il modulo per ricevere informazioni personalizzate e risposte alle tue domande. Che tu sia un principiante o un trader avanzato, sono qui per aiutarti a migliorare le tue strategie e a raggiungere i tuoi obiettivi nel trading sportivo.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="contact-form-section">
+        <div class="container">
+            
+            <div class="form-glass-container">
+                <h2 class="form-heading">Richiedi la consulenza gratuita di 15'<br>compilando questo form di contatto</h2>
+                
+                <form action="#" method="POST" class="tech-form">
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label for="nome">Nome e Cognome</label>
+            <input type="text" id="nome" name="nome" placeholder="Il tuo nome completo" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email (Obbligatorio)</label>
+            <input type="email" id="email" name="email" placeholder="latuaemail@esempio.com" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="esperienza">Attuale esperienza nel Trading Sportivo (Obbligatorio)</label>
+            <select id="esperienza" name="esperienza" required>
+                <option value="" disabled selected>Seleziona il tuo livello</option>
+                <option value="principiante">Principiante</option>
+                <option value="intermedio">Intermedio</option>
+                <option value="avanzato">Avanzato</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tempo">Da quanto hai cominciato il tuo percorso nel TS (Obbligatorio)</label>
+            <select id="tempo" name="tempo" required>
+                <option value="" disabled selected>Seleziona la durata</option>
+                <option value="meno-6-mesi">Meno di 6 mesi</option>
+                <option value="6-mesi-1-anno">Tra 6 mesi e un anno</option>
+                <option value="1-2-anni">Tra 1 - 2 anni</option>
+                <option value="2-3-anni">Tra 2 - 3 anni</option>
+                <option value="piu-3-anni">Più di 3 anni</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="ore">Ore settimanali dedicate alla pratica sui mercati (Obbligatorio)</label>
+            <select id="ore" name="ore" required>
+                <option value="" disabled selected>Scegli un'opzione</option>
+                <option value="0-5">Meno di 5 ore</option>
+                <option value="5-10">Tra 5 e 10 ore</option>
+                <option value="10-20">Tra 10 e 20 ore</option>
+                <option value="20+">Più di 20 ore</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="interesse">A cosa sei interessato? (Obbligatorio)</label>
+            <select id="interesse" name="interesse" required>
+                <option value="" disabled selected>Seleziona un argomento</option>
+                <option value="formazione">Formazione sul trading sportivo</option>
+                <option value="accesso-tos">Accesso alla piattaforma TOS</option>
+                <option value="info-generali">Informazioni generali</option>
+                <option value="consulenza">Consulenza personalizzata</option>
+                <option value="strumenti">Strumenti e funzionalità</option>
+                <option value="altro">Altro</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group full-width">
+        <label for="source">Come sei arrivato qui? *</label>
+        <select id="source" name="source" required>
+            <option value="" disabled selected>Seleziona un'opzione</option>
+            <option value="facebook">Canale Facebook</option>
+            <option value="youtube">Canale Youtube</option>
+            <option value="telegram">Gruppo Telegram “TOS Academy Italia”</option>
+            <option value="libro">Libro “Domina l’Exchange Betting” di Pete Nordsted</option>
+            <option value="passaparola">Passaparola amici/conoscenti</option>
+            <option value="google">Ricerca Google</option>
+        </select>
+    </div>
+
+    <div class="form-group full-width">
+        <label for="tools">Stai già usando altri tool di trading sportivo? Se sì, quali?</label>
+        <input type="text" id="tools" name="tools" placeholder="Es. Fairbot, Geeks Toy...">
+    </div>
+
+    <div class="form-group full-width">
+        <label for="messaggio">Messaggio (Obbligatorio)</label>
+        <textarea id="messaggio" name="messaggio" rows="5" placeholder="Scrivi qui le tue domande o necessità..." required></textarea>
+    </div>
+
+    <div class="form-submit">
+        <button type="submit" class="btn-submit-neon">
+            Invia Richiesta <i class="fas fa-paper-plane ml-2"></i>
+        </button>
+    </div>
+
+</form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col reveal">
+                    <h3 class="footer-heading">Richiedi Consulenza <br><span class="text-neon">Personalizzata</span></h3>
+                    <div class="footer-social-block">
+                        <span class="social-label">Social Network <i class="fas fa-arrow-right ml-2 text-neon"></i></span>
+                        <div class="footer-social-icons">
+                            <a href="https://www.facebook.com/tosacademyitalia/" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://t.me/GianmatteoP" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+                            <a href="https://www.youtube.com/@tosacademyitalia" class="social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-col reveal">
+                    <h3 class="footer-heading">Perché Scegliermi</h3>
+                    <p class="footer-text">
+                        La combinazione di una solida formazione teorica con un'applicazione pratica e continua fa sì che i miei clienti ottengano risultati più tangibili e duraturi.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Gianmatteo Pichierri - Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+        const hamburger = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('.nav-menu');
+        if(hamburger) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

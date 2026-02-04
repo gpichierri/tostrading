@@ -7,31 +7,31 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="piè_pagina.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/piè_pagina.css">
 </head>
 <body>
 
     <nav id="navbar">
         <div class="logo-container">
             <a href="#home">
-                <img src="logo.jpg" alt="TOS Trading Logo" class="logo-img">
+                <img src="loghi/logo.jpg" alt="TOS Trading Logo" class="logo-img">
             </a>
         </div>
 
         <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="index.html" class="nav-link active">Home</a></li>
             <li><a href="servizi.html" class="nav-link">Servizi</a></li>
             <li><a href="chi-sono.html" class="nav-link">Chi Sono</a></li>
-            <li><a href="#" class="nav-link">Contatti</a></li>
+            <li><a href="contatti.html" class="nav-link">Contatti</a></li>
             
             <li class="mobile-only">
-                <a href="https://t.me/tuousername" class="btn-nav-neon mobile">Telegram</a>
+                <a href="https://t.me/GianmatteoP" class="btn-nav-neon mobile">Telegram</a>
             </li>
         </ul>
 
         <div class="nav-actions">
-            <a href="https://t.me/tuousername" target="_blank" class="btn-nav-neon desktop-only">
+            <a href="https://t.me/GianmatteoP" target="_blank" class="btn-nav-neon desktop-only">
                 Telegram <i class="fab fa-telegram-plane"></i>
             </a>
             
@@ -76,7 +76,7 @@
                         </p>
 
                         <div class="about-cta">
-                            <a href="#servizi" class="btn-neon-outline">
+                            <a href="chi-sono.html" class="btn-neon-outline">
                                 Scopri Chi Sono <i class="fas fa-user-astronaut ml-2"></i>
                             </a>
                         </div>
@@ -127,7 +127,7 @@
                 </p>
 
                 <div class="cta-btn-wrapper">
-                    <a href="https://t.me/tuousername" target="_blank" class="btn-neon-hero">
+                    <a href="https://t.me/GianmatteoP" target="_blank" class="btn-neon-hero">
                         Contattami su Telegram <i class="fab fa-telegram-plane ml-2"></i>
                     </a>
                 </div>
@@ -135,7 +135,7 @@
             </div>
         </div>
     </section>
-    <section id="pricing" class="pricing-section">
+<section id="pricing" class="pricing-section">
         <div class="container">
             
             <div class="section-header reveal">
@@ -146,47 +146,69 @@
             <div class="pricing-grid">
                 
                 <div class="price-card reveal">
-                    <div class="card-bg-img" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-bg-img" style="background-image: url('abbonamenti/img3.avif');"></div>
                     <div class="card-overlay-gradient"></div>
                     
                     <div class="card-content">
                         <div class="price-tag">34.95€<span class="period">/mese</span></div>
                         <h3 class="plan-name">GOLD MENSILE A</h3>
                         <p class="plan-desc">Calcio prematch e Live + 3 bot inclusi.</p>
+                        
+                        <button class="btn-info-outline mb-2 js-open-gold">
+                            <i class="fas fa-info-circle"></i> Più Informazioni
+                        </button>
+                        
                         <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HP3R9689LNXHL" class="btn-card-action">Acquista Ora <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="price-card reveal">
-                    <div class="card-bg-img" style="background-image: url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="card-bg-img" style="background-image: url('abbonamenti/img4.avif');"></div>
                     <div class="card-overlay-gradient"></div>
                     
                     <div class="card-content">
                         <div class="price-tag text-neon">44.95€<span class="period">/mese</span></div>
                         <h3 class="plan-name">PLATINUM MENSILE A</h3>
                         <p class="plan-desc">Calcio, tennis, ippica, sport USA + 5 bot + 1 custom.</p>
+                        
+                        <button class="btn-info-outline mb-2 js-open-platinum">
+                            <i class="fas fa-info-circle"></i> Più Informazioni
+                        </button>
+                        
                         <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GBEQHPTKJ4626" class="btn-card-action">Acquista Ora <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="price-card reveal">
-                    <div class="card-bg-img" style="background-image: url('img1.jpg');"></div>
+                    <div class="card-bg-img" style="background-image: url('abbonamenti/img1.jpg');"></div>
                     <div class="card-overlay-gradient"></div>
                     
                     <div class="card-content">
-                        <div class="price-tag">349,95€<span class="period">/mese</span></div>
+                        <div class="price-tag">349,95€<span class="period">/anno</span></div>
                         <h3 class="plan-name">GOLD ANNUALE</h3>
+                        <p class="plan-desc">Calcio prematch e Live + 3 bot inclusi. (Risparmi 2 mesi!)</p>
+                        
+                        <button class="btn-info-outline mb-2 js-open-gold">
+                            <i class="fas fa-info-circle"></i> Più Informazioni
+                        </button>
+                        
                         <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GBEQHPTKJ4626" class="btn-card-action">Acquista Ora <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="price-card reveal">
-                    <div class="card-bg-img" style="background-image: url('img2.webp');"></div>
+                    <div class="card-bg-img" style="background-image: url('abbonamenti/img2.webp');"></div>
                     <div class="card-overlay-gradient"></div>
                     
                     <div class="card-content">
-                        <div class="price-tag">449,95€<span class="period">/trimestre</span></div>
+                        <div class="price-tag">449,95€<span class="period">/anno</span></div>
                         <h3 class="plan-name">PLATINUM ANNUALE</h3>
+                        <p class="plan-desc">Il pacchetto completo annuale. Massima convenienza.</p>
+                        
+                        <button class="btn-info-outline mb-2 js-open-platinum">
+                            <i class="fas fa-info-circle"></i> Più Informazioni
+                        </button>
+                        
                         <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GBEQHPTKJ4626" class="btn-card-action">Acquista Ora <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -386,7 +408,7 @@
                     <h2 class="course-title">Corso di <br><span class="text-neon-glow">Psicologia del Trading</span></h2>
 
                     <div class="course-cta">
-                        <a href="https://t.me/tuousername" target="_blank" class="btn-neon-hero">
+                        <a href="https://t.me/GianmatteoP" target="_blank" class="btn-neon-hero">
                             Unisciti alla Lista d'Attesa <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -394,7 +416,7 @@
 
                 <div class="course-visual reveal">
                     <div class="visual-glass-card">
-                        <img src="https://images.unsplash.com/photo-1611974765270-ca1258634369?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Psicologia del Trading" class="course-img">
+                        <img src="psicologia.avif" alt="Psicologia del Trading" class="course-img">
                         
                         <div class="glow-backdrop"></div>
                     </div>
@@ -556,19 +578,19 @@
 
             <div class="partners-row reveal">
                 <div class="partner-logo">
-                    <img src="logo1.jpg" alt="Trade On Sports">
+                    <img src="loghi/logo1.jpg" alt="Trade On Sports">
                 </div>
                 
                 <div class="partner-logo">
-                    <img src="logo2.png" alt="NowTrade Academy">
+                    <img src="loghi/logo2.png" alt="NowTrade Academy">
                 </div>
                 
                 <div class="partner-logo">
-                    <img src="logo3.jpg" alt="Soccer Trade">
+                    <img src="loghi/logo3.jpg" alt="Soccer Trade">
                 </div>
                 
                 <div class="partner-logo">
-                    <img src="logo4.jpg" alt="Betting Toolkit">
+                    <img src="loghi/logo4.jpg" alt="Betting Toolkit">
                 </div>
             </div>
 
@@ -690,6 +712,104 @@
             </li>
         </ul>
     </div>
+    <div id="modal-gold" class="modal-overlay">
+    <div class="modal-content glass-box">
+        <span class="close-modal">&times;</span>
+        
+        <h2 class="modal-title">GOLD</span></h2>
+        <p class="modal-subtitle">Live + Prematch + 3 Bot inclusi</p>
+        <div class="price-highlight">34,95€ al mese <span class="strike">anziché 39,95£</span></div>
+
+        <div class="modal-scroll-body">
+            
+            <div class="info-block">
+                <h3 class="info-header"><i class="fas fa-broadcast-tower text-neon"></i> Live</h3>
+                <ul>
+                    <li><strong>GameState App:</strong> Calcola in tempo reale le migliori probabilità di extra gol, creando un pattern dato dall’incrocio tra chi e quando segna il primo gol, con il minuto e punteggio attuale, identificando value bets in-play tramite analisi macrostatistica sugli ultimi 10 anni. (video)</li>
+                    <li><strong>Stats:</strong> La vera e propria “Macchina del tempo” tramite la quale è possibile tornare indietro alle condizioni del primo gol o anticipare il futuro andando a vedere nel dettaglio se, quando e da parte di chi possiamo aspettarci un ulteriore gol. (video)</li>
+                    <li><strong>Pathway:</strong> Perfetto per chi preferisce il trading durante l’intervallo. Il pathway è un potente algoritmo che calcola il vantaggio statistico attuale confrontando le probabilità implicite del proprio database con le quote Betfair correnti.</li>
+                </ul>
+            </div>
+
+            <div class="info-block">
+                <h3 class="info-header"><i class="fas fa-clock text-neon"></i> Prematch</h3>
+                <ul>
+                    <li><strong>Prematch to Inplay:</strong> Scanner avanzato che monitora tiri in porta, attacchi pericolosi, % aggressività e molto altro per segnalare in tempo reale le migliori opportunità di gol a breve.</li>
+                    <li><strong>Morning Footy:</strong> Perfetto per chi preferisce il puro trading prematch. Pannello finanziario che ogni 30’ aggiorna grafici e volumi delle liquidità in entrata abbinate sull’1X2 e U/O2.5, permettendo di individuare e anticipare eventuali cambi di trend nel mercato prematch. (STA)</li>
+                    <li><strong>Bookie points and ROI:</strong> Un vero e proprio asset d’investimento finanziario parallelo. In questa sezione viene analizzata la tipologia di partita per quello specifico campionato e segnalato il miglior vantaggio tra le 6 casistiche possibili di punta/banca casa/pareggio/ospite negli ultimi 5 anni.</li>
+                    <li><strong>Statistiche Innovative:</strong> Dati avanzati per singoli campionati, Coppe Nazionali o Europee. Macrostatistiche dettagliate e all’avanguardia per 7 tipologie differenti di favoritismo, medie gol primo/secondo tempo, fasce orarie dei gol/no gol, forma specifica + trend generale nelle ultime 5, 10 e 20 partite, attesa gol in base al numero di tiri effettuati nello specchio, attesa gol nei secondi tempi a seconda del risultato esatto all’intervallo, e tanto, tanto altro.</li>
+                </ul>
+            </div>
+
+            <div class="info-block">
+                <h3 class="info-header"><i class="fab fa-telegram-plane text-neon"></i> Telegram</h3>
+                <p class="mb-2">Ottimizza la tua esperienza in Trade On Sports grazie al vero e proprio ecosistema parallelo di ulteriori strumenti inclusi nel tuo abbonamento:</p>
+                <ul>
+                    <li><strong>TOS Academy Italia:</strong> Una Community che conta ormai un centinaio di trader di tutti i livelli, attiva h24, dove poter condividere e confrontare in tempo reale le proprie analisi.</li>
+                    <li><strong>Jonny Grossmatrk Trading Hub:</strong> In questa stanza il creatore del GSA analizza le migliori occasioni e spiega passo passo la sua operatività tramite l’uso esclusivo della sezione live (no tiri in porta, no XG, no stati di forma, no analisi prematch). Molto utile per chi vuole entrare nel cuore di Trade On Sports.</li>
+                    <li><strong>3 Bot (2 prematch e 1 live):</strong> Varie tipologie di alert ti avvisano in tempo reale sulle migliori occasioni per poter entrare negli incontri pre-filtrati dai nostri algoritmi.</li>
+                </ul>
+            </div>
+
+            <div class="info-block">
+                <h3 class="info-header"><i class="fas fa-file-download text-neon"></i> File Scaricabili</h3>
+                <p>Aggiornati settimanalmente, di tutti i risultati dei principali bot, relative partite e statistiche correlate, direttamente da <a href="http://www.tradeonsports.co.uk/results" target="_blank" class="text-neon">www.tradeonsports.co.uk/results</a>.</p>
+                <p>Ulteriore servizio aggiunto fondamentale per validare le proprie strategie preferite, effettuare backtesting e creare database personalizzati e ottimizzati.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="modal-platinum" class="modal-overlay">
+    <div class="modal-content glass-box">
+        <span class="close-modal close-platinum">&times;</span>
+        
+        <h2 class="modal-title"><span class="text-neon">PLATINUM</h2>
+        <p class="modal-subtitle">Il pacchetto All-Inclusive definitivo</p>
+        <div class="price-highlight">44,95€ al mese</div>
+
+        <div class="modal-scroll-body">
+            
+            <div class="info-block">
+                <h3 class="info-header"><i class="fas fa-check-circle text-neon"></i> Football Gold</h3>
+                <p>Include interamente tutte le funzionalità del pacchetto <strong>Football Gold</strong> (Live, Prematch, Academy, File scaricabili, etc.).</p>
+            </div>
+
+            <div class="info-block">
+                <h3 class="info-header"><i class="fas fa-table-tennis text-neon"></i> Tennis</h3>
+                <ul>
+                    <li><strong>Chat indipendente.</strong></li>
+                    <li><strong>Statistiche in-play avanzate:</strong> % break points convertiti, % controbreak, % servizio per rimanere nel set e tanto altro.</li>
+                    <li><strong>Focus sugli edge ATP/WTA</strong> tramite micro-mined non disponibili su altre piattaforme, per trading inplay e lay prematch.</li>
+                </ul>
+            </div>
+
+            <div class="info-block">
+                <h3 class="info-header"><i class="fas fa-chess-knight text-neon"></i> Ippica (Horse Racing)</h3>
+                <ul>
+                    <li><strong>Chat indipendente.</strong></li>
+                    <li><strong>Scanner dinamico per steamers/drifters</strong> con possibilità di automatizzare qualsiasi strategia pre-corsa o live, tramite la speciale partnership con <em>Betting Toolkit</em>.</li>
+                    <li><strong>Focus sull’edge statistico</strong> delle corse principali UK/Irlanda, tramite un sofisticato tool che identifica solo le migliori opportunità liquide per strategie sia di scalping che betting.</li>
+                </ul>
+            </div>
+
+            <div class="info-block">
+                <h3 class="info-header"><i class="fas fa-football-ball text-neon"></i> Sport Americani</h3>
+                <p>Football Americano (NFL), Basket (NBA) e Hockey su ghiaccio (NHL) in una stanza Telegram a sé, che presto diventerà una vera e propria sezione a parte, come per tennis ed ippica.</p>
+            </div>
+
+            <div class="info-block">
+                <h3 class="info-header"><i class="fas fa-robot text-neon"></i> 3 Ulteriori Bot</h3>
+                <ul>
+                    <li>1 Bot specifico per il <strong>Tennis</strong>.</li>
+                    <li>1 Bot specifico per l'<strong>Ippica</strong>.</li>
+                    <li>1 Bot <strong>Extra Personalizzabile</strong> secondo le tue strategie.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
     <script src="script.js"></script>
 </body>
 

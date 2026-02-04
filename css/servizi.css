@@ -697,3 +697,60 @@
 .mb-2 { margin-bottom: 0.5rem; }
 
 .btn-card-outline i { font-size: 1.1rem; }
+/* --- STILE OFFERTE ESCLUSIVE (Fix Grafico) --- */
+
+.offer-box {
+    background-color: rgba(8, 12, 20, 0.6); /* Sfondo scuro per contrasto */
+    border: 2px dashed var(--neon-green);    /* Bordo tratteggiato verde */
+    border-radius: 15px;
+    padding: 20px;                           /* Spazio interno fondamentale */
+    margin-top: 2rem;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 242, 96, 0.05);
+}
+
+.offer-label {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Contenitore flessibile per i pulsanti */
+.offer-buttons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Spazio tra i pulsanti (quello che mancava prima) */
+}
+
+/* Stile specifico per questi pulsanti */
+.btn-offer-special {
+    display: block;
+    width: 100%;
+    background: var(--neon-green);
+    color: #05080f;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 10px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    transition: all 0.3s ease;
+    border: 1px solid var(--neon-green);
+}
+
+.btn-offer-special:hover {
+    background: #fff;       /* Diventa bianco all'hover */
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 242, 96, 0.4);
+}
+
+/* Testo piccolo per la parte "per sempre anziché..." */
+.small-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.9;
+}

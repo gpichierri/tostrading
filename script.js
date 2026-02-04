@@ -146,4 +146,46 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', changeLinkState);
     // Attiva anche al caricamento
     changeLinkState();
+   // GESTIONE MODAL POPUP (Multi-Button Support)
+function setupModalGroup(btnClass, modalId, closeClass) {
+    const modal = document.getElementById(modalId);
+    // Seleziona TUTTI i pulsanti con quella classe, non solo uno
+    const buttons = document.querySelectorAll('.' + btnClass); 
+    const btnClose = document.querySelector(closeClass);
+
+    if (modal && buttons.length > 0) {
+        
+        // Aggiungi l'evento click a OGNI pulsante trovato
+        buttons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Blocca scroll pagina
+            });
+        });
+
+        // Chiudi con la X
+        if (btnClose) {
+            btnClose.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        // Chiudi cliccando fuori
+        window.addEventListener('click', (e) => {
+            if (e.target == modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+}
+
+// Inizializza i gruppi (Nota: non usiamo # per l'ID del bottone, ma il nome della classe)
+// 1. Tutti i pulsanti con classe 'js-open-gold' aprono 'modal-gold'
+setupModalGroup('js-open-gold', 'modal-gold', '.close-modal'); 
+
+// 2. Tutti i pulsanti con classe 'js-open-platinum' aprono 'modal-platinum'
+setupModalGroup('js-open-platinum', 'modal-platinum', '.close-platinum'); 
 });
