@@ -64,6 +64,9 @@
             
             <div class="form-glass-container">
                 <h2 class="form-heading">Richiedi la consulenza gratuita di 15'<br>compilando questo form di contatto</h2>
+                <p class="small-faded-text" style="text-align: center; margin-bottom: 30px;">
+                    * = obbligatorio
+                </p>
                 
                 <form action="#" method="POST" class="tech-form">
     
@@ -73,14 +76,14 @@
             <input type="text" id="nome" name="nome" placeholder="Il tuo nome completo" required>
         </div>
         <div class="form-group">
-            <label for="email">Email (Obbligatorio)</label>
+            <label for="email">Email *</label>
             <input type="email" id="email" name="email" placeholder="latuaemail@esempio.com" required>
         </div>
     </div>
 
     <div class="form-row">
         <div class="form-group">
-            <label for="esperienza">Attuale esperienza nel Trading Sportivo (Obbligatorio)</label>
+            <label for="esperienza">Attuale esperienza nel Trading Sportivo *</label>
             <select id="esperienza" name="esperienza" required>
                 <option value="" disabled selected>Seleziona il tuo livello</option>
                 <option value="principiante">Principiante</option>
@@ -89,7 +92,7 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="tempo">Da quanto hai cominciato il tuo percorso nel TS (Obbligatorio)</label>
+            <label for="tempo">Da quanto hai cominciato il tuo percorso nel TS *</label>
             <select id="tempo" name="tempo" required>
                 <option value="" disabled selected>Seleziona la durata</option>
                 <option value="meno-6-mesi">Meno di 6 mesi</option>
@@ -103,7 +106,7 @@
 
     <div class="form-row">
         <div class="form-group">
-            <label for="ore">Ore settimanali dedicate alla pratica sui mercati (Obbligatorio)</label>
+            <label for="ore">Ore settimanali dedicate alla pratica o allo studio del trading sportivo *</label>
             <select id="ore" name="ore" required>
                 <option value="" disabled selected>Scegli un'opzione</option>
                 <option value="0-5">Meno di 5 ore</option>
@@ -114,14 +117,13 @@
         </div>
         
         <div class="form-group">
-            <label for="interesse">A cosa sei interessato? (Obbligatorio)</label>
+            <label for="interesse">A cosa sei interessato? *</label>
             <select id="interesse" name="interesse" required>
                 <option value="" disabled selected>Seleziona un argomento</option>
-                <option value="formazione">Formazione sul trading sportivo</option>
-                <option value="accesso-tos">Accesso alla piattaforma TOS</option>
-                <option value="info-generali">Informazioni generali</option>
-                <option value="consulenza">Consulenza personalizzata</option>
-                <option value="strumenti">Strumenti e funzionalità</option>
+                <option value="formazione">Informazioni generali sul Trading Sportivo</option>
+                <option value="accesso-tos">Trade On Sports</option>
+                <option value="info-generali">Trading Prematch</option>
+                <option value="consulenza">Coaching privata</option>
                 <option value="altro">Altro</option>
             </select>
         </div>
@@ -131,22 +133,25 @@
         <label for="source">Come sei arrivato qui? *</label>
         <select id="source" name="source" required>
             <option value="" disabled selected>Seleziona un'opzione</option>
-            <option value="facebook">Canale Facebook</option>
-            <option value="youtube">Canale Youtube</option>
-            <option value="telegram">Gruppo Telegram “TOS Academy Italia”</option>
-            <option value="libro">Libro “Domina l’Exchange Betting” di Pete Nordsted</option>
-            <option value="passaparola">Passaparola amici/conoscenti</option>
-            <option value="google">Ricerca Google</option>
+            <option value="facebook">Nowtrade</option>
+            <option value="youtube">Soccer Trade Academy</option>
+            <option value="telegram">Betting Toolkit</option>
+            <option value="libro">Canale Facebook “TOS Academy Italia”</option>
+            <option value="passaparola">Canale Telegram “TOS Academy Italia”</option>
+            <option value="google">Libro “Domina l’Exchange Betting” di Pete Nordsted</option>
+            <option value="passaparola">Passaparola</option>
+            <option value="google2">Ricerca Google</option>
+            <option value="altro">Altro</option>
         </select>
     </div>
 
     <div class="form-group full-width">
         <label for="tools">Stai già usando altri tool di trading sportivo? Se sì, quali?</label>
-        <input type="text" id="tools" name="tools" placeholder="Es. Fairbot, Geeks Toy...">
+        <input type="text" id="tools" name="tools" placeholder="Es. Goal Profits">
     </div>
 
     <div class="form-group full-width">
-        <label for="messaggio">Messaggio (Obbligatorio)</label>
+        <label for="messaggio">Messaggio</label>
         <textarea id="messaggio" name="messaggio" rows="5" placeholder="Scrivi qui le tue domande o necessità..." required></textarea>
     </div>
 
@@ -161,11 +166,16 @@
         </div>
     </section>
 
-    <footer id="footer" class="site-footer">
+<footer id="footer" class="site-footer">
         <div class="container">
+            
             <div class="footer-grid">
+                
                 <div class="footer-col reveal">
-                    <h3 class="footer-heading">Richiedi Consulenza <br><span class="text-neon">Personalizzata</span></h3>
+                    <a href="contatti.html" class="btn-neon-outline-large">
+                        Prenota Consulenza Gratuita di 15 minuti <i class="fas fa-calendar-alt ml-2"></i>
+                    </a>
+                    
                     <div class="footer-social-block">
                         <span class="social-label">Social Network <i class="fas fa-arrow-right ml-2 text-neon"></i></span>
                         <div class="footer-social-icons">
@@ -175,16 +185,44 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="footer-col reveal">
                     <h3 class="footer-heading">Perché Scegliermi</h3>
                     <p class="footer-text">
                         La combinazione di una solida formazione teorica con un'applicazione pratica e continua fa sì che i miei clienti ottengano risultati più tangibili e duraturi.
                     </p>
+                    <p class="footer-text">
+                        La mia esperienza consolidata sia in <strong>Trade On Sports</strong>, <strong>Nowtrade</strong> che in <strong>Betting Toolkit</strong>, garantisce accesso a tecniche di alto livello, unite a un percorso di mentorship mirato e una community attiva, per chi cerca una crescita reale e non solo teorica.
+                    </p>
                 </div>
+
             </div>
+                        <div class="partners-row reveal">
+                
+                <a href="servizi.html#partners" class="partner-logo">
+                    <img src="loghi/logo1.jpg" alt="Trade On Sports">
+                </a>
+                <a href="servizi.html#partners" class="partner-logo">
+                    <img src="loghi/logo4.jpg" alt="Betting Toolkit">
+                </a>
+                
+                <a href="servizi.html#partners" class="partner-logo">
+                    <img src="loghi/logo3.jpg" alt="Soccer Trade">
+                </a>
+                
+                <a href="servizi.html#partners" class="partner-logo">
+                    <img src="loghi/logo2.png" alt="NowTrade Academy">
+                </a>
+                
+                
+
+            </div>
+            
+
             <div class="footer-bottom">
                 <p class="copyright">© 2026 Gianmatteo Pichierri - Tutti i diritti riservati.</p>
-            </div>
+                </div>
+
         </div>
     </footer>
 

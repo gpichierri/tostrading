@@ -147,24 +147,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // Attiva anche al caricamento
     changeLinkState();
    // GESTIONE MODAL POPUP (Multi-Button Support)
-function setupModalGroup(btnClass, modalId, closeClass) {
+function setupModalGroup(btnClass, modalId, specificCloseClass) {
     const modal = document.getElementById(modalId);
-    // Seleziona TUTTI i pulsanti con quella classe, non solo uno
-    const buttons = document.querySelectorAll('.' + btnClass); 
-    const btnClose = document.querySelector(closeClass);
+    const buttons = document.querySelectorAll('.' + btnClass);
 
     if (modal && buttons.length > 0) {
         
-        // Aggiungi l'evento click a OGNI pulsante trovato
+        // --- 1. CERCA IL TASTO CHIUDI (Logica Intelligente) ---
+        let btnClose = null;
+
+        // Se hai passato una classe specifica (vecchio metodo), proviamo a usarla
+        if (specificCloseClass) {
+            // Aggiungi il punto se manca (es. "close-gold-a" diventa ".close-gold-a")
+            let selector = specificCloseClass.startsWith('.') ? specificCloseClass : '.' + specificCloseClass;
+            btnClose = modal.querySelector(selector);
+        }
+
+        // Se non l'abbiamo trovato (o non hai passato nulla), cerchiamo la classe standard ".close-modal"
+        if (!btnClose) {
+            btnClose = modal.querySelector('.close-modal');
+        }
+
+        // --- 2. GESTIONE EVENTI ---
+        
+        // Apertura
         buttons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Blocca scroll pagina
+                document.body.style.overflow = 'hidden';
             });
         });
 
-        // Chiudi con la X
+        // Chiusura (Click sulla X)
         if (btnClose) {
             btnClose.addEventListener('click', () => {
                 modal.classList.remove('active');
@@ -172,7 +187,7 @@ function setupModalGroup(btnClass, modalId, closeClass) {
             });
         }
 
-        // Chiudi cliccando fuori
+        // Chiusura (Click sullo sfondo)
         window.addEventListener('click', (e) => {
             if (e.target == modal) {
                 modal.classList.remove('active');
@@ -188,4 +203,6 @@ setupModalGroup('js-open-gold', 'modal-gold', '.close-modal');
 
 // 2. Tutti i pulsanti con classe 'js-open-platinum' aprono 'modal-platinum'
 setupModalGroup('js-open-platinum', 'modal-platinum', '.close-platinum'); 
+setupModalGroup('js-open-gold-annual', 'modal-gold-annual', 'close-gold-a');
+setupModalGroup('js-open-platinum-annual', 'modal-platinum-annual', 'close-platinum-a');
 });

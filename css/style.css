@@ -1957,3 +1957,52 @@ nav.scrolled {
 .modal-scroll-body::-webkit-scrollbar-thumb:hover { background: var(--neon-green); }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* --- GRIGLIA PREZZI (2 per riga) --- */
+.pricing-grid {
+    display: grid;
+    /* Questa regola forza esattamente 2 colonne di uguale larghezza */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem; /* Spazio tra le card */
+    max-width: 1000px; /* Limita la larghezza totale per tenerle compatte */
+    margin: 0 auto; /* Centra la griglia nella pagina */
+    padding: 2rem 0;
+}
+
+/* --- RESPONSIVE --- */
+/* Su Tablet e Mobile diventano 1 colonna per leggibilità */
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: 1fr; /* 1 sola colonna */
+        padding: 0 20px;
+    }
+}
+/* --- PULSANTE FOOTER PICCOLO --- */
+.btn-footer-small {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.05); /* Sfondo leggero */
+    border: 1px solid var(--neon-green);     /* Bordo verde neon */
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;                  /* Dimensioni contenute */
+    border-radius: 8px;                      /* Angoli smussati */
+    font-size: 0.9rem;                       /* Testo non troppo grande */
+    line-height: 1.4;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;                   /* Spazio sotto */
+    box-shadow: 0 0 10px rgba(0, 242, 96, 0.1);
+}
+
+.btn-footer-small .text-neon {
+    font-weight: 700;
+    /* La classe text-neon ha già il colore, qui aggiungiamo solo peso */
+}
+
+/* Effetto Hover (Passaggio mouse) */
+.btn-footer-small:hover {
+    background: var(--neon-green);
+    color: #000; /* Testo diventa nero per leggibilità */
+    box-shadow: 0 0 20px rgba(0, 242, 96, 0.4);
+    transform: translateY(-2px); /* Si alza leggermente */
+}

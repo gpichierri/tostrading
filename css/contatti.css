@@ -311,3 +311,12 @@ select:focus {
     border-color: var(--neon-green);
     box-shadow: 0 0 15px rgba(0, 242, 96, 0.2);
 }
+/* --- TESTO PICCOLO SBIADITO --- */
+.small-faded-text {
+    font-size: 0.85rem;              /* Dimensione piccola (circa 13-14px) */
+    color: rgba(255, 255, 255, 0.6); /* Bianco con 60% di opacità */
+    font-weight: 300;                /* Font leggero/sottile */
+    letter-spacing: 0.5px;           /* Leggera spaziatura per eleganza */
+    margin-top: 5px;                 /* Spazio sopra se sotto un titolo/bottone */
+    display: block;                  /* Va a capo */
+}
