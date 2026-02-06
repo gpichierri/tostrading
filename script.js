@@ -214,47 +214,106 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ============================================================
-    // 4. FORM CONTATTI & DISCLAIMER
-    // ============================================================
-    const contactForm = document.getElementById('contact-form');
-    const modalDisclaimer = document.getElementById('modal-disclaimer');
-    const btnConfirmSubmit = document.getElementById('btn-confirm-submit');
-    const btnCloseDisclaimer = document.querySelector('.close-disclaimer');
+/* ============================================================
+   4. GESTIONE INVIO SILENZIOSO (AJAX) + DISCLAIMER
+   ============================================================ */
+const contactForm = document.getElementById('contact-form');
+const modalDisclaimer = document.getElementById('modal-disclaimer');
+const btnConfirmSubmit = document.getElementById('btn-confirm-submit');
+const btnCloseDisclaimer = document.querySelector('.close-disclaimer');
+const successBox = document.getElementById('inline-success');
 
-    // A. Quando l'utente clicca "Invia" -> Blocca e mostra Disclaimer
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Blocca invio
-            if (modalDisclaimer) {
-                modalDisclaimer.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    }
-
-    // B. Quando clicca "Sono d'accordo" -> Invia davvero
-    if (btnConfirmSubmit) {
-        btnConfirmSubmit.addEventListener('click', function() {
-            contactForm.submit();
-        });
-    }
-
-    // C. Chiusura Disclaimer
-    if (modalDisclaimer) {
-        if (btnCloseDisclaimer) {
-            btnCloseDisclaimer.addEventListener('click', () => {
-                modalDisclaimer.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
+// A. Quando clicchi "Invia" nel form -> FERMI TUTTO e apri il Disclaimer
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // BLOCCA il ricaricamento della pagina!
+        
+        if (modalDisclaimer) {
+            modalDisclaimer.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
-        window.addEventListener('click', (e) => {
-            if (e.target == modalDisclaimer) {
-                modalDisclaimer.classList.remove('active');
-                document.body.style.overflow = 'auto';
+    });
+}
+
+// B. Quando clicchi "Sono d'accordo" nel Disclaimer -> INVII I DATI
+if (btnConfirmSubmit) {
+    btnConfirmSubmit.addEventListener('click', function() {
+        
+        // 1. Feedback visivo sul pulsante (così l'utente sa che sta lavorando)
+        const originalBtnText = btnConfirmSubmit.innerHTML;
+        btnConfirmSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Attendere...';
+        btnConfirmSubmit.style.pointerEvents = 'none'; // Evita doppi click
+
+        // 2. Raccogli i dati del form
+        const formData = new FormData(contactForm);
+
+        // 3. INVIA A FORMSPREE "DI NASCOSTO" (Fetch API)
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
             }
+        })
+        .then(response => {
+            if (response.ok) {
+                // --- SUCCESSO! ---
+                
+                // Chiudi il Disclaimer
+                if (modalDisclaimer) modalDisclaimer.classList.remove('active');
+                document.body.style.overflow = 'auto';
+
+                // Nascondi il Form originale
+                contactForm.style.display = 'none';
+                
+                // Nascondi eventuale titolo sopra il form (opzionale)
+                const heading = document.querySelector('.form-heading');
+                if(heading) heading.style.display = 'none';
+
+                // MOSTRA IL BOX VERDE
+                if (successBox) {
+                    successBox.style.display = 'block';
+                    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+            } else {
+                // Errore generico
+                alert("Si è verificato un errore nell'invio. Riprova più tardi.");
+                resetButton(btnConfirmSubmit, originalBtnText);
+            }
+        })
+        .catch(error => {
+            // Errore di connessione
+            alert("Errore di connessione. Controlla internet e riprova.");
+            resetButton(btnConfirmSubmit, originalBtnText);
+        });
+    });
+}
+
+// Funzione per ripristinare il bottone in caso di errore
+function resetButton(btn, originalText) {
+    btn.innerHTML = originalText;
+    btn.style.pointerEvents = 'auto';
+}
+
+// C. Gestione Chiusura Disclaimer (X o Click fuori)
+if (modalDisclaimer) {
+    // Chiudi con la X
+    if (btnCloseDisclaimer) {
+        btnCloseDisclaimer.addEventListener('click', () => {
+            modalDisclaimer.classList.remove('active');
+            document.body.style.overflow = 'auto';
         });
     }
+    // Chiudi cliccando fuori
+    window.addEventListener('click', (e) => {
+        if (e.target == modalDisclaimer) {
+            modalDisclaimer.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
 
 
     // ============================================================
