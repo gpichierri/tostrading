@@ -754,3 +754,66 @@
     font-weight: 500;
     opacity: 0.9;
 }
+/* --- PARTNER LOGOS (Layout Corretto) --- */
+.partners-row {
+    display: flex;
+    justify-content: center; /* Centra i loghi orizzontalmente */
+    align-items: center;
+    flex-wrap: nowrap;       /* Impedisce di andare a capo TRA di loro */
+    gap: 40px;               /* Molto spazio tra un logo e l'altro */
+    
+    /* FORZA IL POSIZIONAMENTO SOPRA */
+    width: 100%;             /* Occupa tutta la larghezza: spinge giù il copyright */
+    flex-basis: 100%;        /* Rinforza il comando larghezza */
+    margin-top: 3rem;        /* Spazio sopra */
+    margin-bottom: 3rem;     /* Spazio SOTTO (stacca il copyright) */
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Riga sottile elegante opzionale */
+}
+
+/* Stile del singolo contenitore logo */
+.partner-logo {
+    display: block;          /* Rimuove comportamenti strani dei link */
+    transition: transform 0.3s ease;
+}
+
+/* Stile dell'immagine (LOGO PIÙ GRANDE) */
+.partner-logo img {
+    display: block;
+    width: auto;
+    height: auto;
+    
+    /* DIMENSIONI AUMENTATE */
+    max-height: 100px;       /* Molto più alti (prima erano 60px) */
+    max-width: 220px;        /* Più larghi */
+    
+    object-fit: contain;
+    filter: grayscale(100%); /* Bianco e nero a riposo */
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+/* Effetto Hover: diventano colorati e si ingrandiscono */
+.partner-logo:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.15);  /* Zoom leggermente più marcato */
+}
+
+/* Assicurati che il footer-bottom stia sotto */
+.footer-bottom {
+    width: 100%;             /* Occupa tutta la larghezza */
+    text-align: center;      /* Testo centrato */
+    margin-top: 1rem;
+}
+
+/* --- MOBILE (Smartphone) --- */
+@media (max-width: 768px) {
+    .partners-row {
+        flex-wrap: wrap;     /* Su mobile permettiamo di andare a capo se necessario */
+        gap: 20px;
+    }
+    .partner-logo img {
+        max-height: 60px;    /* Su mobile tornano normali per non uscire dallo schermo */
+    }
+}

@@ -204,5 +204,72 @@ setupModalGroup('js-open-gold', 'modal-gold', '.close-modal');
 // 2. Tutti i pulsanti con classe 'js-open-platinum' aprono 'modal-platinum'
 setupModalGroup('js-open-platinum', 'modal-platinum', '.close-platinum'); 
 setupModalGroup('js-open-gold-annual', 'modal-gold-annual', 'close-gold-a');
-setupModalGroup('js-open-platinum-annual', 'modal-platinum-annual', 'close-platinum-a');
+setupModalGroup('js-open-platinum-annual', 'modal-platinum-annual', 'close-platinum-a');    
+// AGGIUNGI QUESTA RIGA:
+setupModalGroup('js-open-tos-more', 'modal-tos-more');
+
+/* --- AUTO-CHIUSURA MODAL AL CLICK SUI LINK INTERNI --- */
+const autoCloseLinks = document.querySelectorAll('.js-close-link');
+
+if (autoCloseLinks.length > 0) {
+    autoCloseLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Trova il pop-up genitore di questo link
+            const parentModal = this.closest('.modal-overlay');
+            
+            if (parentModal) {
+                // Chiudi il modal
+                parentModal.classList.remove('active');
+                // Riabilita lo scroll della pagina principale
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+}       
+/* --- GESTIONE INVIO FORM CON DISCLAIMER --- */
+const contactForm = document.getElementById('contact-form');
+const modalDisclaimer = document.getElementById('modal-disclaimer');
+const btnConfirmSubmit = document.getElementById('btn-confirm-submit');
+const btnCloseDisclaimer = document.querySelector('.close-disclaimer');
+
+// 1. Quando l'utente clicca "Invia Richiesta" nel form
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault(); // FERMA l'invio immediato a Formspree
+
+// Apri il Disclaimer
+if (modalDisclaimer) {
+modalDisclaimer.classList.add('active');
+document.body.style.overflow = 'hidden';
+}
+});
+}
+
+// 2. Quando l'utente clicca "Sono d'accordo" nel Disclaimer
+if (btnConfirmSubmit) {
+btnConfirmSubmit.addEventListener('click', function() {
+// Invia veramente il form ora
+contactForm.submit();
+});
+}
+
+// 3. Gestione chiusura Disclaimer (X o click fuori)
+if (modalDisclaimer) {
+// Chiudi con la X
+if (btnCloseDisclaimer) {
+btnCloseDisclaimer.addEventListener('click', () => {
+modalDisclaimer.classList.remove('active');
+document.body.style.overflow = 'auto';
+});
+}
+// Chiudi cliccando fuori (annulla l'invio)
+window.addEventListener('click', (e) => {
+if (e.target == modalDisclaimer) {
+modalDisclaimer.classList.remove('active');
+document.body.style.overflow = 'auto';
+}
+});
+}
+
+
 });

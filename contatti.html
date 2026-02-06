@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="loghi/logo.jpg">
+    <link rel="icon" type="image/png" sizes="192x192" href="loghi/logo.jpg">
     <title>Contatti | Gianmatteo Pichierri</title>
     
     <link rel="stylesheet" href="css/style.css">
@@ -10,7 +12,6 @@
     <link rel="stylesheet" href="css/servizi.css">
     <link rel="stylesheet" href="css/chi-sono.css">
 
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
@@ -18,7 +19,7 @@
 
     <nav id="navbar">
         <div class="logo-container">
-            <a href="#home">
+            <a href="index.html">
                 <img src="loghi/logo.jpg" alt="TOS Trading Logo" class="logo-img">
             </a>
         </div>
@@ -68,105 +69,107 @@
                     * = obbligatorio
                 </p>
                 
-                <form action="#" method="POST" class="tech-form">
+                <form action="https://formspree.io/f/mwvnejwj" method="POST" class="tech-form" id="contact-form">
+                    
+                    <input type="hidden" name="_subject" value="Nuova richiesta consulenza dal Sito">
     
-    <div class="form-row">
-        <div class="form-group">
-            <label for="nome">Nome e Cognome</label>
-            <input type="text" id="nome" name="nome" placeholder="Il tuo nome completo" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" placeholder="latuaemail@esempio.com" required>
-        </div>
-    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome e Cognome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Il tuo nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="latuaemail@esempio.com" required>
+                        </div>
+                    </div>
 
-    <div class="form-row">
-        <div class="form-group">
-            <label for="esperienza">Attuale esperienza nel Trading Sportivo *</label>
-            <select id="esperienza" name="esperienza" required>
-                <option value="" disabled selected>Seleziona il tuo livello</option>
-                <option value="principiante">Principiante</option>
-                <option value="intermedio">Intermedio</option>
-                <option value="avanzato">Avanzato</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="tempo">Da quanto hai cominciato il tuo percorso nel TS *</label>
-            <select id="tempo" name="tempo" required>
-                <option value="" disabled selected>Seleziona la durata</option>
-                <option value="meno-6-mesi">Meno di 6 mesi</option>
-                <option value="6-mesi-1-anno">Tra 6 mesi e un anno</option>
-                <option value="1-2-anni">Tra 1 - 2 anni</option>
-                <option value="2-3-anni">Tra 2 - 3 anni</option>
-                <option value="piu-3-anni">Più di 3 anni</option>
-            </select>
-        </div>
-    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="esperienza">Attuale esperienza nel Trading Sportivo *</label>
+                            <select id="esperienza" name="esperienza" required>
+                                <option value="" disabled selected>Seleziona il tuo livello</option>
+                                <option value="principiante">Principiante</option>
+                                <option value="intermedio">Intermedio</option>
+                                <option value="avanzato">Avanzato</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tempo">Da quanto hai cominciato il tuo percorso nel TS *</label>
+                            <select id="tempo" name="tempo" required>
+                                <option value="" disabled selected>Seleziona la durata</option>
+                                <option value="meno-6-mesi">Meno di 6 mesi</option>
+                                <option value="6-mesi-1-anno">Tra 6 mesi e un anno</option>
+                                <option value="1-2-anni">Tra 1 - 2 anni</option>
+                                <option value="2-3-anni">Tra 2 - 3 anni</option>
+                                <option value="piu-3-anni">Più di 3 anni</option>
+                            </select>
+                        </div>
+                    </div>
 
-    <div class="form-row">
-        <div class="form-group">
-            <label for="ore">Ore settimanali dedicate alla pratica o allo studio del trading sportivo *</label>
-            <select id="ore" name="ore" required>
-                <option value="" disabled selected>Scegli un'opzione</option>
-                <option value="0-5">Meno di 5 ore</option>
-                <option value="5-10">Tra 5 e 10 ore</option>
-                <option value="10-20">Tra 10 e 20 ore</option>
-                <option value="20+">Più di 20 ore</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="interesse">A cosa sei interessato? *</label>
-            <select id="interesse" name="interesse" required>
-                <option value="" disabled selected>Seleziona un argomento</option>
-                <option value="formazione">Informazioni generali sul Trading Sportivo</option>
-                <option value="accesso-tos">Trade On Sports</option>
-                <option value="info-generali">Trading Prematch</option>
-                <option value="consulenza">Coaching privata</option>
-                <option value="altro">Altro</option>
-            </select>
-        </div>
-    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ore">Ore settimanali dedicate alla pratica o allo studio *</label>
+                            <select id="ore" name="ore" required>
+                                <option value="" disabled selected>Scegli un'opzione</option>
+                                <option value="0-5">Meno di 5 ore</option>
+                                <option value="5-10">Tra 5 e 10 ore</option>
+                                <option value="10-20">Tra 10 e 20 ore</option>
+                                <option value="20+">Più di 20 ore</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interesse">A cosa sei interessato? *</label>
+                            <select id="interesse" name="interesse" required>
+                                <option value="" disabled selected>Seleziona un argomento</option>
+                                <option value="formazione">Informazioni generali sul Trading Sportivo</option>
+                                <option value="accesso-tos">Trade On Sports</option>
+                                <option value="info-generali">Trading Prematch</option>
+                                <option value="consulenza">Coaching privata</option>
+                                <option value="altro">Altro</option>
+                            </select>
+                        </div>
+                    </div>
 
-    <div class="form-group full-width">
-        <label for="source">Come sei arrivato qui? *</label>
-        <select id="source" name="source" required>
-            <option value="" disabled selected>Seleziona un'opzione</option>
-            <option value="facebook">Nowtrade</option>
-            <option value="youtube">Soccer Trade Academy</option>
-            <option value="telegram">Betting Toolkit</option>
-            <option value="libro">Canale Facebook “TOS Academy Italia”</option>
-            <option value="passaparola">Canale Telegram “TOS Academy Italia”</option>
-            <option value="google">Libro “Domina l’Exchange Betting” di Pete Nordsted</option>
-            <option value="passaparola">Passaparola</option>
-            <option value="google2">Ricerca Google</option>
-            <option value="altro">Altro</option>
-        </select>
-    </div>
+                    <div class="form-group full-width">
+                        <label for="source">Come sei arrivato qui? *</label>
+                        <select id="source" name="source" required>
+                            <option value="" disabled selected>Seleziona un'opzione</option>
+                            <option value="facebook">Nowtrade</option>
+                            <option value="youtube">Soccer Trade Academy</option>
+                            <option value="telegram">Betting Toolkit</option>
+                            <option value="tos-fb">Canale Facebook “TOS Academy Italia”</option>
+                            <option value="tos-tg">Canale Telegram “TOS Academy Italia”</option>
+                            <option value="libro">Libro “Domina l’Exchange Betting”</option>
+                            <option value="passaparola">Passaparola</option>
+                            <option value="google">Ricerca Google</option>
+                            <option value="altro">Altro</option>
+                        </select>
+                    </div>
 
-    <div class="form-group full-width">
-        <label for="tools">Stai già usando altri tool di trading sportivo? Se sì, quali?</label>
-        <input type="text" id="tools" name="tools" placeholder="Es. Goal Profits">
-    </div>
+                    <div class="form-group full-width">
+                        <label for="tools">Stai già usando altri tool di trading sportivo? Se sì, quali?</label>
+                        <input type="text" id="tools" name="tools" placeholder="Es. Goal Profits">
+                    </div>
 
-    <div class="form-group full-width">
-        <label for="messaggio">Messaggio</label>
-        <textarea id="messaggio" name="messaggio" rows="5" placeholder="Scrivi qui le tue domande o necessità..." required></textarea>
-    </div>
+                    <div class="form-group full-width">
+                        <label for="messaggio">Messaggio</label>
+                        <textarea id="messaggio" name="messaggio" rows="5" placeholder="Scrivi qui le tue domande o necessità..." required></textarea>
+                    </div>
 
-    <div class="form-submit">
-        <button type="submit" class="btn-submit-neon">
-            Invia Richiesta <i class="fas fa-paper-plane ml-2"></i>
-        </button>
-    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn-neon-hero w-100">
+                            Prenota consulenza gratuita di 15 minuti <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
 
-</form>
+                </form>
             </div>
         </div>
     </section>
 
-<footer id="footer" class="site-footer">
+    <footer id="footer" class="site-footer">
         <div class="container">
             
             <div class="footer-grid">
@@ -189,44 +192,66 @@
                 <div class="footer-col reveal">
                     <h3 class="footer-heading">Perché Scegliermi</h3>
                     <p class="footer-text">
-                        La combinazione di una solida formazione teorica con un'applicazione pratica e continua fa sì che i miei clienti ottengano risultati più tangibili e duraturi.
+                        Perché nel trading sportivo non insegno solo un metodo, ma una <span class="text-neon">mentalità</span>. Oggi, come referente principale per Trade On Sports in Italia, metto la mia esperienza e il mio approccio formativo a disposizione di chi vuole imparare a leggere il mercato con lucidità e <span class="text-neon">concretezza</span>.
                     </p>
                     <p class="footer-text">
-                        La mia esperienza consolidata sia in <strong>Trade On Sports</strong>, <strong>Nowtrade</strong> che in <strong>Betting Toolkit</strong>, garantisce accesso a tecniche di alto livello, unite a un percorso di mentorship mirato e una community attiva, per chi cerca una crescita reale e non solo teorica.
+                        Credo fortemente nella condivisione e nella <span class="text-neon">crescita personale</span>, per cui accompagno ogni trader in un percorso fatto di <span class="text-neon">disciplina</span>, fiducia e rendimento sostenibile, con l’obiettivo ultimo di raggiungere una propria <span class="text-neon">autonomia operativa</span>.
                     </p>
                 </div>
 
-            </div>
-                        <div class="partners-row reveal">
-                
+            </div> 
+
+            <div class="partners-row reveal">
                 <a href="servizi.html#partners" class="partner-logo">
                     <img src="loghi/logo1.jpg" alt="Trade On Sports">
                 </a>
                 <a href="servizi.html#partners" class="partner-logo">
                     <img src="loghi/logo4.jpg" alt="Betting Toolkit">
                 </a>
-                
                 <a href="servizi.html#partners" class="partner-logo">
                     <img src="loghi/logo3.jpg" alt="Soccer Trade">
                 </a>
-                
                 <a href="servizi.html#partners" class="partner-logo">
                     <img src="loghi/logo2.png" alt="NowTrade Academy">
                 </a>
-                
-                
-
             </div>
-            
 
             <div class="footer-bottom">
                 <p class="copyright">© 2026 Gianmatteo Pichierri - Tutti i diritti riservati.</p>
-                </div>
+            </div>
 
         </div>
     </footer>
 
+    <div id="modal-disclaimer" class="modal-overlay">
+        <div class="modal-content glass-box" style="max-width: 600px; text-align: center;">
+            <span class="close-modal close-disclaimer">&times;</span>
+            
+            <h2 class="modal-title" style="color: #ff3333;">DISCLAIMER</h2>
+            <p class="section-subtitle" style="margin-bottom: 20px;">Nota importante prima di procedere</p>
+            
+            <div class="modal-scroll-body" style="text-align: left; font-size: 0.95rem; line-height: 1.6;">
+                <p>
+                    <strong>Nota bene:</strong> la consulenza gratuita è rivolta a chi desidera investire con serietà e responsabilità nel proprio percorso di formazione nel Trading Sportivo.
+                </p>
+                <p>
+                    Voglio essere trasparente fin da subito: <span style="color: #fff;">non si tratta di un cammino semplice né immediato</span>, ma personalmente sarò sempre presente per offrire il miglior supporto possibile lungo la tua crescita.
+                </p>
+                <p>
+                    Il vero progresso, però, nascerà soprattutto dal tuo impegno, dalla capacità di restare costante e dalla volontà di migliorarti giorno dopo giorno.
+                </p>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <button id="btn-confirm-submit" class="btn-neon-hero">
+                    <i class="fas fa-check-circle"></i> Sono d'accordo
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // 1. MENU NAVBAR E SCROLL
         window.addEventListener('scroll', function() {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -242,6 +267,54 @@
                 navMenu.classList.toggle('active');
             });
         }
+
+        // 2. GESTIONE INVIO FORM CON DISCLAIMER
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const modalDisclaimer = document.getElementById('modal-disclaimer');
+            const btnConfirmSubmit = document.getElementById('btn-confirm-submit');
+            const btnCloseDisclaimer = document.querySelector('.close-disclaimer');
+
+            // Quando l'utente clicca "Invia" nel form
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Blocca l'invio immediato
+                    
+                    // Apri il Disclaimer
+                    if (modalDisclaimer) {
+                        modalDisclaimer.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            }
+
+            // Quando l'utente clicca "Sono d'accordo" nel Disclaimer
+            if (btnConfirmSubmit) {
+                btnConfirmSubmit.addEventListener('click', function() {
+                    // Invia veramente il form ora
+                    contactForm.submit(); 
+                });
+            }
+
+            // Chiudi disclaimer con la X
+            if (btnCloseDisclaimer) {
+                btnCloseDisclaimer.addEventListener('click', () => {
+                    if (modalDisclaimer) {
+                        modalDisclaimer.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+
+            // Chiudi disclaimer cliccando fuori
+            window.addEventListener('click', (e) => {
+                if (modalDisclaimer && e.target == modalDisclaimer) {
+                    modalDisclaimer.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
     </script>
+
 </body>
 </html>
